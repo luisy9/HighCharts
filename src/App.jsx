@@ -14,9 +14,7 @@ function App() {
   return (
     <>
       <div className="w-2/3 m-auto">
-        {/* <Map /> */}
         {/* <MapaBicing /> */}
-        {/* <AdrPointer /> */}
       </div>
       <div className="grid grid-cols-1">
         <AreaChart />

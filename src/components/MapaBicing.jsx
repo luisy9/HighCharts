@@ -8,15 +8,17 @@
 //     //     "lat": 41.99103588081312,
 //     //     "long": 2.8248757123947144
 //     // }
-//     const defaultBicing = fetch(`https://api.citybik.es/v2/networks/bicing`)
-//         .then(res => res.json()).then(bicing => setPlace(bicing.network.stations))
+
 
 //     const [address, setAddress] = useState(null);
-//     const [marcadors, setMarcadors] = useState([defaultBicing]);
+//     const [marcadors, setMarcadors] = useState([]);
 //     const [place, setPlace] = useState([]);
-//     const [cerca, setCerca] = useState('')
 
-//     const [center, setCenter] = useState([place.lat, place.long]);
+//     const defaultBicing = fetch(`https://api.citybik.es/v2/networks/bicing`)
+//         .then(res => res.json()).then(bicing => setPlace(bicing.network.stations));
+//     const [cerca, setCerca] = useState('');
+
+//     const [center, setCenter] = useState([place.latitude, place.longuitude]);
 
 //     function cercaAdr() {
 //         const url = "https://nominatim.openstreetmap.org/search?format=json&q=";
@@ -101,6 +103,7 @@
 //             <br />
 //             <h1 className="text-2xl" >{place.adr}</h1>
 //             <br />
+//             <p>{place}</p>
 //             <MapContainer
 //                 className="el-mapa"
 //                 center={center}
