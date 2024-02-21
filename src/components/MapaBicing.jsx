@@ -18,14 +18,13 @@ export const MapaBicing = () => {
     const [center, setCenter] = useState([place.lat, place.long]);
 
     function cercaAdr() {
-        // const url = "https://nominatim.openstreetmap.org/search?format=json&q=";
-        const url = "https://api.citybik.es/v2/networks/bicing";
+        const url = "https://nominatim.openstreetmap.org/search?format=json&q=";
         if (cerca) {
             fetch(url + encodeURI(cerca))
                 .then(d => d.json())
                 .then(data => data[0])
                 .then(item => {
-
+                    console.log(item)
                     setPlace({ adr: item.display_name, lat: item.lat, long: item.lon })
                 })
         }
@@ -45,7 +44,6 @@ export const MapaBicing = () => {
         fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${long}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 setAddress(data);
                 setPlace({ "adr": data.display_name, lat: lat, long: long })
             });
@@ -86,8 +84,11 @@ export const MapaBicing = () => {
 
     const CentraMapa = ({ centre }) => {
         const map = useMap();
+        console.log('hola')
         useEffect(() => {
-            fetch(`https://api.citybik.es/v2/networks/bicing`).then(res => res.json()).then(bicis => setMarcadoresBicis([...bicis.network.stations]))
+            fetch(`https://api.citybik.es/v2/networks/bicing`).then(res => res.json())
+            .then(bicis => 
+                console.log(bicis))
             map.setView(centre);
         }, centre);
         return null;
