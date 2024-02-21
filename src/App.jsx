@@ -7,14 +7,14 @@ import Temporizador from "./components/Temporizador"
 // import LeafletMaps from "./components/LeafletMaps"
 // import Map from './components/Map';
 // import { AdrPointer } from "./components/AdrPointer"
-// import { MapaBicing } from "./components/MapaBicing"
+import { MapaBicing } from "./components/MapaBicing"
 // import ScatterChart from "./components/ScatterChart"
 
 function App() {
   return (
     <>
       <div className="w-2/3 m-auto">
-        {/* <MapaBicing /> */}
+        <MapaBicing />
       </div>
       <div className="grid grid-cols-1">
         <AreaChart />
